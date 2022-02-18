@@ -1,0 +1,23 @@
+通过导入注册Bean的集中方法：
+1.通过@Import注解
+2.实现ImportSelector接口
+3.实现ImportBeanDefinitionRegistrar接口
+
+注：
+1.如果是一个类，会创建一个该类对应的Bean到IOC容器
+2.如果是ImportSelector接口的实现类，那就会根据实现的逻辑创建对应的类型Bean到容器
+3.如果是一个ImportBeanDefinitionRegistrar接口实现类，那么也会根据该实现类的逻辑来创建Bean(ImportBeanDefinitionRegistrar接口，在框架内部实现的比较多)
+
+使用场景：
+    一.对ImportBeanDefinitionRegistrar的使用
+    1.Aop
+        1) Aop-AutoProxyRegistrar
+        2) Aop-AspectJAutoProxyRegistrar
+    2.开源框架Apollo
+        1）ApolloConfigRegistrar
+    3.微服务架构，使用Eureka作为注册中心
+        1) DiscoveryRegisterBean
+
+业务场景：
+
+
